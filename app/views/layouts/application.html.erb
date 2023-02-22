@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Projet1</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <!--<%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>-->
+
+   <script src="https://cdn.tailwindcss.com"></script>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+      <div class="h-20 w-full bg-none z-20">
+        <h2 class="text-6xl 	text-center	text-white	font-black  " >
+          <%= yield :title %>
+        </h2>
+      </div>
+
+      <p class="notice text-green-500 font-bold text-center m-auto w-fit  "><%= notice %></p>
+      <p class="alert  text-red-500	font-bold text-center m-auto w-fit "><%= alert %></p>
+      <%= yield %>
+       <!--<%= debug user_signed_in? %>
+       <%= debug session.to_hash %>-->
+      
+  </body>
+</html>

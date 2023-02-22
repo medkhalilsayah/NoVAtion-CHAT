@@ -1,0 +1,26 @@
+<section class="px-10  absolute top-0 w-full h-full bg-gradient-to-t from-orange-700 to-orange-400">
+    <h1 class="text-6xl text-center	text-white	font-black mt-5 ">Liste des Messages</h1>
+    <div class="">
+      <div class="">
+        <div class="" >
+          <ul>
+            <% @articles.each do |article| %>
+              <li class=" bg-white  grid grid-flow-row auto-rows-max w-fit mx-auto my-8 py-5 px-10 rounded-xl  items-center text-center">
+                <p> <%= article.created_at%></p> <%= link_to article.title, article  %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    
+  <div>
+    <%= link_to "<", user_session_path ,class:"fixed absolute top-5 left-5 bg-slate-800	 hover:bg-slate-400	hover:text-black text-white uppercase font-bold px-6 py-3 rounded-[50%] m-auto w-fit " %>
+  </div>
+    
+</section>
+
+
+
+<!--
+        <div class="bg-white py-10 px-5 rounded-xl flex flex-col items-center" >
+-->

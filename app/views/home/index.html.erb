@@ -1,0 +1,118 @@
+<% if user_signed_in? %>
+	<section class=" px-10 py-10 absolute top-0 w-full h-screen bg-gradient-to-r from-blue-900 to-blue-300">
+				
+		<div class=" flex items-center">
+				<div class="w-1/2">
+					<h1 class="text-7xl text-white font-bold mb-10 	"> BIENVENUE <%= current_user.username%></h1>	
+	 				<%= link_to "se déconnecter", destroy_user_session_path, method: :delete  ,class:" bg-red-600 hover:bg-red-400 text-white uppercase font-bold px-10 py-4 rounded-md"%>
+					<br><br><br>
+					<%= link_to "Liste des Messages", articles_path ,class:" bg-orange-600 hover:bg-orange-400 text-white uppercase font-bold px-10 py-4 rounded-md"%>
+					<%= link_to "Créer Message", new_article_path ,class:"bg-green-800	 hover:bg-green-500	 text-white uppercase font-bold px-10 py-4 rounded-md"%>
+				</div>
+
+				<div class="w-1/2 flex justify-end">
+					<%= image_tag "logos/butler.png",class:" w-[500px] h-[400px] mt-20" %>
+				</div>
+		</div>
+	</section>
+	
+<% else %>
+
+	<div class="absolute  px-10 top-0 w-full bg-gradient-to-r from-blue-900 to-blue-300	">
+			<div class=" flex items-center">
+				<div class="w-1/2">
+					<h1 class="text-5xl text-white font-bold"> Bienvenue dans notre site "NoVAtion-CHAT" </h1>
+					<p class="my-4 text-white pb-4 font-bold"> NoVAtion-CHAT est un outil de gestion de projet en ligne. Il repose sur une organisation des projets en planches listant des cartes, chacune représentant des tâches. </p>
+					<%= link_to "se connecter", new_user_session_path ,class:"  bg-yellow-600 hover:bg-yellow-500 text-white uppercase font-bold px-10 py-4 rounded-md "%>
+				</div>
+
+				<div class="w-1/2 flex justify-end">
+					<%= image_tag "logos/chat.png" %>
+				</div>
+			</div>
+
+	</div>
+
+
+	<section class=" absolute py-20 px-10 top-[500px] w-full bg-blue-100">
+		<div>
+				<h1 class="text-center text-3xl font-bold mb-16 uppercase"> nos utilisateurs </h1>
+			<div class="flex">
+				<div class="w-1/3 px-4">
+					<div class="bg-white py-10 px-5 rounded-xl flex flex-col items-center" >
+						<%= image_tag "logos/Novation City.png" ,class:"w-[200px] h-[150px]"%>
+							<span class="font-bold text-xl"> Novation city</span>
+							<p class="text-center mt-3">Novation City est le pôle de compétitivité de Sousse. C'est une société de droit privé créée en 2009 et basée sur le principe du partenariat Public-Privé.</p>
+					</div>
+				</div>
+
+
+				<div class="w-1/3 px-4">
+					<div class="bg-white py-10 rounded-xl px-5 rounded-xl flex flex-col items-center">
+						<%= image_tag "logos/leanios.png" ,class:" w-[140px] h-[140px]" %>
+							<span class="font-bold text-xl mt-2"> Leanios</span>
+							<p class="text-center mt-3"> Le logiciel intuitif Manufacturing Execution System de Leanios est le moyen le plus simple pour les petites et moyennes usines (PME) d'optimiser leurs processus de production.</p>
+					</div>
+				</div>
+
+
+				<div class="w-1/3 px-4 ">
+					<div class="bg-white py-10 rounded-xl px-5 rounded-xl flex flex-col items-center mb-2">
+							<%= image_tag "logos/tadreex.png" ,class:"w-[300px] h-[150px]"%>
+							<span class="font-bold text-xl "> TadreeX</span>
+							<p class="text-center mt-3">Nous sommes la startup tunisienne 'TadreeX'.
+							Nous offrons des formations en réalité virtuelle dans le domaine de la sécurité et la santé au travail.</p>
+					</div>
+				</div>
+
+				<div class="w-1/3 px-4">
+					<div class="bg-white py-10 rounded-xl px-5 rounded-xl flex flex-col items-center ">
+							<%= image_tag "logos/EnovaRobotics.png" ,class:"w-[280px] h-[140px] " %>
+							<span class="font-bold text-xl mt-2"> Enova Robotics</span>
+							<p class="text-center mt-3">Enova Robotics est une entreprise spécialisée dans la conception et la fabrication de robots grâce à une expertise combinée en logiciel, matériel et perception. </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<% end %>
+
+
+
+
+
+
+
+
+
+<!--
+<h1 class="text-6xl	text-center	text-white	font-black	"> Bienvenue </h1>	
+		<div class="bg-white mt-40  rounded-lg  ring-1 ring-slate-900/5 shadow-xl m-auto w-fit px-8 	">
+				<%= image_tag "logos/tadreex.png" ,class:""%>
+				<%= image_tag "logos/leanios.png" ,class:"w-20 h-20 " %>
+				<%= image_tag "logos/EnovaRobotics.png" ,class:"w-30 h-20 " %>
+				<%= image_tag "logos/Novation City.png" ,class:"w-30"%>
+		</div>
+		<%= link_to "articles", articles_path ,class:""%>
+		<%= link_to "articles", articles_path ,class:"bg-emerald-900 hover:bg-emerald-700 text-cente text-white	mt-2 p-2 m-auto w-fit rounded-md"%>	
+-->
+
+<!--
+	<div class="bg-white mt-32 dark:bg-slate-900 rounded-lg px-8 py-20 ring-1 ring-slate-900/5 shadow-xl h-5 m-auto w-fitclass="h-screen w-screen bg-cover bg-center"style="background-image: url('https://cdn2.webmanagercenter.com/wmc/wp-content/uploads/2018/04/novation-city-sousse.jpg');">
+ class="absolute -z-10 top-0 w-full h-screen bg-teal-500
+	<%= debug user_signed_in? %>
+	<%= debug current_user %>
+
+
+
+
+
+
+	<div class="flex items-center justify-between mx-auto py-5" style="max-width: 1000px">
+					<%= link_to "Liste des Messages", articles_path ,class:"bg-orange-600 hover:bg-orange-400 text-white uppercase font-bold px-2 py-2 rounded-md"%>
+					<%= link_to "Créer Message", new_article_path ,class:"bg-green-800	 hover:bg-green-500	 text-white uppercase font-bold px-2 py-2 rounded-md"%>
+bg-violet-600					<%= link_to "Modifer Message", articles_path ,class:" hover:bg-violet-400 text-white uppercase font-bold px-2 py-2 rounded-md"%>
+		
+				</div>
+-->

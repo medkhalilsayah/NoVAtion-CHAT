@@ -1,0 +1,33 @@
+<section class="px-10  absolute top-0 w-full h-full bg-gradient-to-t from-orange-700 to-orange-400">
+  <div class="flex">
+    <div class=" m-auto w-fit bg-white mt-32  rounded-lg px-5 py-5 shadow-xl mr-10  ring-1 ring-slate-900/5 text-center text-xl">
+      <h1 class="text-2xl font-bold mb-3">Envoyer de: </h1><%= @article.user.username %>
+    </div>
+
+    <div class="mt-40 flex">
+      <div class="bg-violet-600 hover:bg-violet-400 text-white uppercase font-bold px-3 py-3 rounded-md m-auto w-fit mr-5" >
+        <%= link_to "Edit", edit_article_path(@article) if @article.user == current_user %>
+      </div>
+
+      <div class="bg-red-600 hover:bg-red-400  text-white uppercase font-bold px-3 py-3 rounded-md m-auto w-fit">
+        <%= link_to "Destroy", article_path(@article) , method: :delete, data: { confirm: "Are you sure?"}  if @article.user == current_user%>
+      </div>
+    </div>
+
+    <div class="bg-white mt-32 dark:bg-slate-900 rounded-lg px-9 py-5 ml-10 ring-1 ring-slate-900/5 shadow-xl m-auto w-fit text-xl text-center ">
+      <h1 class="text-2xl font-bold mb-3">Reçu Par:</h1> <%= @article.title %>
+    </div>
+  </div>
+
+  
+    <div class=" m-auto w-fit bg-white mt-3  rounded-lg px-5 py-5 shadow-xl   ring-1 ring-slate-900/5 text-center text-xl">
+      <h1 class="text-2xl font-bold mb-3">Message:</h1> <%= @article.body %>
+    </div>
+  
+
+    <div>
+      <%= link_to "<", user_session_path ,class:"absolute top-5 left-5 bg-slate-800	 hover:bg-slate-400	hover:text-black text-white uppercase font-bold px-6 py-3 rounded-[50%] m-auto w-fit " %>
+    </div>
+  
+
+</section>
